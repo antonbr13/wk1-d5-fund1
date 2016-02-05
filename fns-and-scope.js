@@ -1,13 +1,31 @@
 //Once you complete a problem, open up Chrome and check the answer in the console.
 
 
-var name = 'Tyler';
+
 //Create a function called isTyler that accepts name as it's only parameter.
 //If the argument you passed in is equal to 'Tyler', return true. If it's not, return false.
 
-  //Code Here
+  //Code Here ( ADDED .toLowerCase() )
 
-//Next problem
+  var name = 'Tyler';
+
+
+  function isTyler(name) {
+     if (name.toLowerCase() === 'tyler') {
+        return true;
+     }
+     else {
+        return false;
+     }
+  }
+
+  isTyler('TYler'); // -> true
+  isTyler(name); // -> true
+  isTyler('anton'); // -> false
+
+
+
+//Next problem____________
 
 
 
@@ -55,7 +73,7 @@ var name = 'Tyler';
 //Create a function called myName that returns your name
 
   //Code Here
-  
+
 
 
 //Now save the function definition of myName into a new variable called newMyName
