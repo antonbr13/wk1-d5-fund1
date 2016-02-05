@@ -4,20 +4,24 @@ var outer = function(){
   var name = 'Tyler';
   return function(){
     return 'The original name was ' + name;
-  }
+   }
 }
+
 //Above you're given a function that returns another function which has a closure over the name variable.
 //Invoke outer saving the return value into another variable called 'inner'.
 
   //Code Here
 
+var inner = outer();
+
 //Once you do that, invoke inner.
 
   //Code Here
 
+  inner();
 
 
-//Next problem
+//Next problem___________
 
 
 
@@ -34,17 +38,42 @@ var callFriend = function(){
 
   //Code Here
 
+  var call = callFriend();
+  console.log(call("435-215-9248"));
 
 
-//Next Problem
-
-
+//Next problem___________
 
 /*
   Write a function called makeCounter that makes the following code work properly.
 */
 
   //Code Here
+
+  var makeCounter = function() {
+    var counter = 0 ;
+    return function() {
+         return counter += 1;
+     }
+  }
+
+
+ var county = makeCounter();
+
+ console.log(county);
+// -> function() {
+//        return counter += 1;
+//    }
+
+ console.log(county());   // ->  1
+
+ console.log(county());   // ->  2
+
+ console.log(county());   // ->  3
+
+ console.log(county());   // ->  4
+
+
   var count = makeCounter();
   count(); // 1
   count(); // 2
@@ -53,19 +82,27 @@ var callFriend = function(){
 
 
 
-//Next Problem
-
-
-
+//Next problem___________
 /*
   Write a function named codeLove that returns the string 'I love code'. Write a second function named codeFriend that accepts the first function as it's first parameter. The second function should return a new third function. Store the third function in a variable, codeEcho which, when invoked, invokes the first, original function that was passed in, but will only ever do so once (returns null after first invocation).
 */
 
   //Code Here
 
+function codeLove() {
+   return 'I love code';
+}
+
+function codeFriend(passed) {
+   var codeEcho = function() {
+
+   };
+   return codeEcho;
+
+}
 
 
-//Next Problem
+//Next problem___________
 
 
 
@@ -73,9 +110,12 @@ var callFriend = function(){
   Now, similar to the last problem, write a function called 'fnCounter' that accepts two parameters. The first parameter will be an anonymous function and the second parameter, 'N', will be a number. Now, in 'fnCounter', allow the anonymous funciton to be invoked 'N' number of times. After it's been invoked 'N' number of times, return 'STOP'.
 */
 
+function fnCounter(anon, N) {
+
+}
 
 
-//Next Problem
+//Next problem___________
 
 
 
@@ -107,7 +147,7 @@ var callFriend = function(){
 
 
 
-//Next Problem
+//Next problem___________
 
 
 
@@ -123,5 +163,3 @@ var callFriend = function(){
 
   *Hint: Don't let this fool you. Break down what's really happening here.
 */
-
-
