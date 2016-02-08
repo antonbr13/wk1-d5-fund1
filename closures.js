@@ -147,6 +147,18 @@ function fnCounter(anon, N) {
       }, i*1000 );
     }
   };
+__________  answer ______________
+  var counter = function() {
+      function myTimeOut(i) {
+         setTimeout(function timer(){
+            console.log(i);
+      }, i*1000)
+   }
+   for(var i = 0; i < 6; i++){
+         myTimeOut(i);
+}
+};
+counter();
 
   Above you have a function named counter. Examine the function (without running the code) then below write what you expect to happen when the funciton is invoked. *Hint: setTimeout calls a function or evaluates an expression after a specified number of milliseconds.
 
@@ -163,7 +175,20 @@ its
   Fix the counter function so that it works the way you expect it to work. (logging 1 then 2 then 3, etc) (Note: No unit test for this one because of the timeout)
 */
 
-    //Code Here
+// __________  answer ______________
+  var counter = function() {
+      function myTimeOut(i) {
+         setTimeout(function timer(){
+            console.log(i);
+         }, i * 1000);
+      }
+      for(var i = 0; i < 6; i++){
+         myTimeOut(i);
+      }
+   };
+   counter();
+
+
 
 
 
