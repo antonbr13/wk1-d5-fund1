@@ -4,8 +4,8 @@ var outer = function(){
   var name = 'Tyler';
   return function(){
     return 'The original name was ' + name;
-   }
-}
+};
+};
 
 //Above you're given a function that returns another function which has a closure over the name variable.
 //Invoke outer saving the return value into another variable called 'inner'.
@@ -54,8 +54,8 @@ var callFriend = function(){
     var counter = 0 ;
     return function() {
          return counter += 1;
-     }
-  }
+     };
+  };
 
 
  var county = makeCounter();
@@ -94,26 +94,46 @@ function codeLove() {
 }
 
 function codeFriend(passed) {
+   var flag = 0;
    var codeEcho = function() {
-
+      if (flag === 0) {
+         flag++;
+         return passed();
+      }
+      else{
+         return null;
+      }
    };
    return codeEcho;
 
 }
 
+var codeEcho = codeFriend(codeLove);
 
 //Next problem___________
-
-
-
 /*
-  Now, similar to the last problem, write a function called 'fnCounter' that accepts two parameters. The first parameter will be an anonymous function and the second parameter, 'N', will be a number. Now, in 'fnCounter', allow the anonymous funciton to be invoked 'N' number of times. After it's been invoked 'N' number of times, return 'STOP'.
+  Now, similar to the last problem, write a function called 'fnCounter' that accepts two parameters.
+  The first parameter will be an anonymous function and the second parameter, 'N', will be a number.
+  Now, in 'fnCounter', allow the anonymous funciton to be invoked 'N' number of times.
+  After it's been invoked 'N' number of times, return 'STOP'.
 */
 
+
 function fnCounter(anon, N) {
+   var flag = 0;
 
-}
+      return function () {
+         if (flag < N) {
+            flag++;
+            return anon();
+         }
+         return "STOP";
+      };
+   }
 
+
+// var kid = fnCounter(function(){console.log("SF");}, 10 );
+// kid();
 
 //Next problem___________
 
@@ -131,7 +151,7 @@ function fnCounter(anon, N) {
   Above you have a function named counter. Examine the function (without running the code) then below write what you expect to happen when the funciton is invoked. *Hint: setTimeout calls a function or evaluates an expression after a specified number of milliseconds.
 
     //Answer Here
-
+its
 
   Now, run the function in your console and note what happpens.
 
@@ -149,7 +169,16 @@ function fnCounter(anon, N) {
 
 //Next problem___________
 
+function fn(num) {
+   return function(){
+      return num;
+   };
+}
 
+var funcArray = [];
+for (var i = 0; i < 6; i++) {
+   funcArray.push(fn(i));
+}
 
 /*
   Make the following code work

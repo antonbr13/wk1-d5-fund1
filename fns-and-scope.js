@@ -126,12 +126,12 @@ function myName() {
 
   //Code Here
 
-var myNewName = myName();
+var newMyName = myName;
 
 
 //Now alert the result of invoking newMyName
 
-alert(myNewName);
+alert(newMyName());
 
 
 //Next problem____________
